@@ -1,4 +1,12 @@
 html {
     font-family: $font__main;
-    font-size: ms(1);
+    font-size: 10px;
+}
+
+body {
+    font-size: ms(2);
+}
+
+a {
+    cursor: pointer;
 }
