@@ -7,7 +7,6 @@ var $             = require('gulp-load-plugins')();
 var autoprefixer  = require('autoprefixer');
 
 var jsFiles = [
-  'js/jquery.min.js',
   'js/app.js'
 ]
 var jsDest = 'js/dist';
