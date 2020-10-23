@@ -6,13 +6,7 @@ var browserSync   = require('browser-sync').create();
 var $             = require('gulp-load-plugins')();
 var autoprefixer  = require('autoprefixer');
 
-var sassPaths = [
-  'node_modules/foundation-sites/scss',
-  'node_modules/motion-ui/src'
-];
-
 var jsFiles = [
-  // 'js/slick.min.js',
   'js/jquery.min.js',
   'js/app.js'
 ]
@@ -31,7 +25,6 @@ function scripts() {
 function sass() {
   return gulp.src('scss/main.scss')
     .pipe($.sass({
-      includePaths: sassPaths,
       outputStyle: 'compressed' // if css compressed **file size**
     })
       .on('error', $.sass.logError))
@@ -50,10 +43,8 @@ function sass() {
 function serve() {
   gulp.watch("scss/**/*.scss", sass);
   gulp.watch("js/*.js", scripts);
-  gulp.watch("*.html").on('change', browserSync.reload);
 }
 
 gulp.task('sass', sass);
 gulp.task('scripts', scripts);
-gulp.task('serve', gulp.series('sass', serve));
 gulp.task('default', gulp.series('sass', 'scripts', serve));
