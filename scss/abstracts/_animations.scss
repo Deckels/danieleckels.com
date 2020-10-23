@@ -1,0 +1,15 @@
+@keyframes color-fade {
+    to {
+       background-color: $color__white;
+    }
+}
+
+@keyframes pop-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
