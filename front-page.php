@@ -44,7 +44,7 @@ get_header();
 					<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
 						<div class="portfolio-item">
 							<figure>
-								<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="">
+								<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
 							</figure>
 						</div>
 					</a>
