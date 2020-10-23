@@ -1,27 +1,87 @@
-$graphic-width: 50rem;
+$graphic-width-small: 20rem;
+$graphic-width-large: 40rem;
 
 .home {
     .hero {
-        align-content: center;
         background-color: $color__dark;
-        display: flex;
+        color: $color__white;
         height: 100vh;
-        justify-content: center;
-        padding: 0 4rem;
+        padding: 4rem;
         width: 100vw;
 
-        .inner {
+        .content-area {
+            .content {
+                margin-bottom: 3rem;
+            }
+
+            h1 {
+                @extend .h1;
+            }
+
+            .hero-link {
+                position: relative;
+                &:not(:last-of-type()) {
+                    padding-right: 1rem;
+                }
+
+                &__1 {
+                    color: $color__dark-green;
+                }
+                &__2 {
+                    color: lighten($color__dark-green, 15%);
+                }
+                &__3 {
+                    color: lighten($color__light-green, 15%);;
+                }
+                &__4 {
+                    color: $color__light-green;
+                }
+                &__5 {
+                    color: $color__slate;
+                }
+                &__6 {
+                    color: lighten($color__slate, 15%);
+                }
+            }
+        }
+
+        .graphic-section {
+            display: inline-block;
+            height: $graphic-width-small * 0.625;
             position: relative;
-            width: $graphic-width;
+            width: $graphic-width-small;
+
+            @include breakpoint(medium) {
+                height: $graphic-width-large * 0.625;
+                width: $graphic-width-large;
+            }
+        }
+
+        .inner-section {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+
+            @include breakpoint(xlarge) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
 
         .segment {
             background: $color__white;
             clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0% 100%);
-            height: $graphic-width * 0.625;
+            height: $graphic-width-small * 0.625;
             position: absolute;
             transition: clip-path .4s;
-            width: $graphic-width * 0.625;
+            width: $graphic-width-small * 0.625;
+
+            @include breakpoint(medium) {
+                height: $graphic-width-large * 0.625;
+                width: $graphic-width-large;
+            }
             
             &.active {
                 z-index: 1;
@@ -39,12 +99,20 @@ $graphic-width: 50rem;
                 animation: pop-in .2s ease-in backwards, color-fade .5s ease-in 1.5s forwards;
                 background: $color__dark-green;
                 clip-path: polygon(50% 0, 63% 27%, 27% 100%, 0% 100%);
+
+                &.active {
+                    background: $color__dark-green !important;
+                }
             }
             
             &__2 {
-                background: lighten($color__dark-green, 15%);
                 animation: pop-in .2s ease-in .2s backwards, color-fade .5s ease-in 1.5s forwards;
+                background: lighten($color__dark-green, 15%);
                 clip-path: polygon(65% 30%, 78% 57%, 57% 100%, 30% 100%); 
+
+                &.active {
+                    background: lighten($color__dark-green, 15%) !important;
+                }
             }
             
             &__3, &__4 {
@@ -60,12 +128,20 @@ $graphic-width: 50rem;
                 animation: pop-in .2s ease-in .4s backwards, color-fade .5s ease-in 1.5s forwards;
                 background: lighten($color__light-green, 15%);
                 clip-path: polygon(50% 60%, 70% 100%, 70% 100%, 30% 100%, );
+
+                &.active {
+                    background: lighten($color__light-green, 15%) !important;
+                }
             }
             
             &__4 {
                 animation: pop-in .2s ease-in 1s backwards, color-fade .5s ease-in 1.5s forwards;
                 background: $color__light-green;
                 clip-path: polygon(50% 0, 63% 27%, 50% 54%, 37% 27%);
+
+                &.active {
+                    background: $color__light-green !important;
+                }
             }
             
             &__5, &__6 {
@@ -80,12 +156,20 @@ $graphic-width: 50rem;
                 animation: pop-in .2s ease-in .6s backwards, color-fade .5s ease-in 1.5s forwards;
                 background: $color__slate;
                 clip-path: polygon(35% 30%, 70% 100%, 43% 100%, 22% 57%);
+
+                &.active {
+                    background: $color__slate !important;
+                }
             }
             
             &__6 {
                 animation: pop-in .2s ease-in .8s backwards, color-fade .5s ease-in 1.5s forwards;
                 background: lighten($color__slate, 15%);
                 clip-path: polygon(50% 0, 100% 100%, 73% 100%, 37% 27%);
+
+                &.active {
+                    background: lighten($color__slate, 15%) !important;
+                }
             }
         }
     }
