@@ -33,6 +33,24 @@ get_header();
 				</div>
 			</div>
 		</section>
+
+		<section class="leibowitz-portfolio">
+			<div class="inner-section">
+
+			</div>
+
+			<div class="portfolio-grid">
+				<?php foreach(get_field('leibowitz_portfolio') as $item):?>
+					<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
+						<div class="portfolio-item">
+							<figure>
+								<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="">
+							</figure>
+						</div>
+					</a>
+				<?php endforeach;?>
+			</div>
+		</section>
 	</main>
 
 <?php
