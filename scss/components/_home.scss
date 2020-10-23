@@ -25,22 +25,22 @@ $graphic-width-large: 40rem;
                 }
 
                 &__1 {
-                    color: $color__dark-green;
+                    color: $color__blue;
                 }
                 &__2 {
-                    color: lighten($color__dark-green, 15%);
+                    color: $color__dark-green;
                 }
                 &__3 {
-                    color: lighten($color__light-green, 15%);;
-                }
-                &__4 {
                     color: $color__light-green;
                 }
+                &__4 {
+                    color: $color__gold;
+                }
                 &__5 {
-                    color: $color__slate;
+                    color: lighten($color__slate, 20%);
                 }
                 &__6 {
-                    color: lighten($color__slate, 15%);
+                    color: $color__slate;
                 }
             }
         }
@@ -97,21 +97,21 @@ $graphic-width-large: 40rem;
             
             &__1 {
                 animation: pop-in .2s ease-in backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__dark-green;
+                background: $color__blue;
                 clip-path: polygon(50% 0, 63% 27%, 27% 100%, 0% 100%);
 
                 &.active {
-                    background: $color__dark-green !important;
+                    background: $color__blue !important;
                 }
             }
             
             &__2 {
                 animation: pop-in .2s ease-in .2s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: lighten($color__dark-green, 15%);
+                background: $color__dark-green;
                 clip-path: polygon(65% 30%, 78% 57%, 57% 100%, 30% 100%); 
 
                 &.active {
-                    background: lighten($color__dark-green, 15%) !important;
+                    background: $color__dark-green !important;
                 }
             }
             
@@ -126,21 +126,21 @@ $graphic-width-large: 40rem;
             
             &__3 {
                 animation: pop-in .2s ease-in .4s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: lighten($color__light-green, 15%);
+                background: $color__light-green;
                 clip-path: polygon(50% 60%, 70% 100%, 70% 100%, 30% 100%, );
 
                 &.active {
-                    background: lighten($color__light-green, 15%) !important;
+                    background: $color__light-green !important;
                 }
             }
             
             &__4 {
                 animation: pop-in .2s ease-in 1s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__light-green;
+                background: $color__gold;
                 clip-path: polygon(50% 0, 63% 27%, 50% 54%, 37% 27%);
 
                 &.active {
-                    background: $color__light-green !important;
+                    background: $color__gold !important;
                 }
             }
             
@@ -154,21 +154,21 @@ $graphic-width-large: 40rem;
             
             &__5 {
                 animation: pop-in .2s ease-in .6s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__slate;
+                background: lighten($color__slate, 20%);
                 clip-path: polygon(35% 30%, 70% 100%, 43% 100%, 22% 57%);
 
                 &.active {
-                    background: $color__slate !important;
+                    background: lighten($color__slate, 20%) !important;
                 }
             }
             
             &__6 {
                 animation: pop-in .2s ease-in .8s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: lighten($color__slate, 15%);
+                background: $color__slate ;
                 clip-path: polygon(50% 0, 100% 100%, 73% 100%, 37% 27%);
 
                 &.active {
-                    background: lighten($color__slate, 15%) !important;
+                    background: $color__slate!important;
                 }
             }
         }
