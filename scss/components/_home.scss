@@ -80,7 +80,7 @@ $graphic-width-large: 40rem;
 
             @include breakpoint(medium) {
                 height: $graphic-width-large * 0.625;
-                width: $graphic-width-large;
+                width: $graphic-width-large * 0.625;
             }
             
             &.active {
