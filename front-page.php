@@ -6,12 +6,12 @@ get_header();
 		<section class="hero">
 			<div class="inner-section">
 				<div class="graphic-section">
-					<div class="segment segment__1"></div>
-					<div class="segment segment__2"></div>
-					<div class="segment segment__3"></div>
-					<div class="segment segment__4"></div>
-					<div class="segment segment__5"></div>
-					<div class="segment segment__6"></div>
+					<div class="segment home segment__1"></div>
+					<div class="segment home segment__2"></div>
+					<div class="segment home segment__3"></div>
+					<div class="segment home segment__4"></div>
+					<div class="segment home segment__5"></div>
+					<div class="segment home segment__6"></div>
 				</div>
 
 				<div class="content-area">
@@ -38,7 +38,10 @@ get_header();
 		<section class="leibowitz-portfolio">
 			<?php while(have_rows('leibowitz')): the_row();?>
 				<div class="container">
-					<div class="inner-section">
+					<div class="title-section">
+						<div class="small-graphic small-graphic__3">
+							<?php get_template_part('partials/graphic-section-small')?>
+						</div>
 						<h2 class="h2"><?=get_sub_field('title')?></h2>
 					</div>
 				</div>
@@ -62,13 +65,16 @@ get_header();
 		<section class="freelance-portfolio">
 			<?php while(have_rows('freelance')): the_row();?>
 				<div class="container">
-					<div class="inner-section">
+					<div class="title-section">
+						<div class="small-graphic small-graphic__4">
+							<?php get_template_part('partials/graphic-section-small')?>
+						</div>
 						<h2 class="h2"><?=get_sub_field('title')?></h2>
 					</div>
 				</div>
 
-				<div class="portfolio-grid">
-					<?php if(get_sub_field('portfolio')):?>
+				<?php if(get_sub_field('portfolio')):?>
+					<div class="portfolio-grid">
 						<?php foreach(get_sub_field('portfolio') as $item):?>
 							<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
 								<div class="portfolio-item">
@@ -78,8 +84,9 @@ get_header();
 								</div>
 							</a>
 						<?php endforeach;?>
-					<?php endif;?>
-				</div>
+					</div>
+				<?php endif;?>
+
 			<?php endwhile;?>
 		</section>
 		<?php endif;?>
