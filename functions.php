@@ -105,12 +105,6 @@ function wpi_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
     return $stylesheet_dir_uri.'/css/main.css';
 }
 
-add_action( 'admin_menu', 'remove_default_post_type' );
-
-function remove_default_post_type() {
-    remove_menu_page( 'edit.php' );
-}
-
 // Removes from admin menu
 add_action( 'admin_menu', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
@@ -129,6 +123,10 @@ function mytheme_admin_bar_render() {
     $wp_admin_bar->remove_menu('comments');
 }
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+function remove_default_post_type() {
+    remove_menu_page( 'edit.php' );
+}
+add_action( 'admin_menu', 'remove_default_post_type' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
