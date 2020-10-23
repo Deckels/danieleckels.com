@@ -37,10 +37,38 @@ get_header();
 		<?php if(have_rows('leibowitz')):?>
 		<section class="leibowitz-portfolio">
 			<?php while(have_rows('leibowitz')): the_row();?>
-				<div class="inner-section">
-					<h2 class="h2"><?=get_sub_field('title')?></h2>
+				<div class="container">
+					<div class="inner-section">
+						<h2 class="h2"><?=get_sub_field('title')?></h2>
+					</div>
+				</div>
 
-					<div class="portfolio-grid">
+				<div class="portfolio-grid">
+					<?php foreach(get_sub_field('portfolio') as $item):?>
+						<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
+							<div class="portfolio-item">
+								<figure>
+									<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
+								</figure>
+							</div>
+						</a>
+					<?php endforeach;?>
+				</div>
+			<?php endwhile;?>
+		</section>
+		<?php endif;?>
+
+		<?php if(have_rows('freelance')):?>
+		<section class="freelance-portfolio">
+			<?php while(have_rows('freelance')): the_row();?>
+				<div class="container">
+					<div class="inner-section">
+						<h2 class="h2"><?=get_sub_field('title')?></h2>
+					</div>
+				</div>
+
+				<div class="portfolio-grid">
+					<?php if(get_sub_field('portfolio')):?>
 						<?php foreach(get_sub_field('portfolio') as $item):?>
 							<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
 								<div class="portfolio-item">
@@ -50,7 +78,7 @@ get_header();
 								</div>
 							</a>
 						<?php endforeach;?>
-					</div>
+					<?php endif;?>
 				</div>
 			<?php endwhile;?>
 		</section>
