@@ -69,109 +69,6 @@ $graphic-width-large: 40rem;
                 justify-content: space-between;
             }
         }
-
-        .segment {
-            background: $color__white;
-            clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0% 100%);
-            height: $graphic-width-small * 0.625;
-            position: absolute;
-            transition: clip-path .4s;
-            width: $graphic-width-small * 0.625;
-
-            @include breakpoint(medium) {
-                height: $graphic-width-large * 0.625;
-                width: $graphic-width-large * 0.625;
-            }
-            
-            &.active {
-                z-index: 1;
-            }
-            
-            &__1, &__2 {
-                left: 0;  
-                
-                &.active {
-                    clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0% 100%);
-                }
-            }
-            
-            &__1 {
-                animation: pop-in .2s ease-in backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__blue;
-                clip-path: polygon(50% 0, 63% 27%, 27% 100%, 0% 100%);
-
-                &.active {
-                    background: $color__blue !important;
-                }
-            }
-            
-            &__2 {
-                animation: pop-in .2s ease-in .2s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__dark-green;
-                clip-path: polygon(65% 30%, 78% 57%, 57% 100%, 30% 100%); 
-
-                &.active {
-                    background: $color__dark-green !important;
-                }
-            }
-            
-            &__3, &__4 {
-                left: 50%;
-                transform: translateX(-50%);
-                
-                &.active {
-                    clip-path: polygon(50% 0, 100% 100%, 50% 100%, 0% 100%);
-                }
-            }
-            
-            &__3 {
-                animation: pop-in .2s ease-in .4s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__light-green;
-                clip-path: polygon(50% 60%, 70% 100%, 70% 100%, 30% 100%, );
-
-                &.active {
-                    background: $color__light-green !important;
-                }
-            }
-            
-            &__4 {
-                animation: pop-in .2s ease-in 1s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__gold;
-                clip-path: polygon(50% 0, 63% 27%, 50% 54%, 37% 27%);
-
-                &.active {
-                    background: $color__gold !important;
-                }
-            }
-            
-            &__5, &__6 {
-                right: 0;
-                
-                &.active {
-                    clip-path: polygon(50% 0, 100% 100%, 0% 100%, 0% 100%);
-                }
-            }
-            
-            &__5 {
-                animation: pop-in .2s ease-in .6s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: lighten($color__slate, 20%);
-                clip-path: polygon(35% 30%, 70% 100%, 43% 100%, 22% 57%);
-
-                &.active {
-                    background: lighten($color__slate, 20%) !important;
-                }
-            }
-            
-            &__6 {
-                animation: pop-in .2s ease-in .8s backwards, color-fade .5s ease-in 1.5s forwards;
-                background: $color__slate ;
-                clip-path: polygon(50% 0, 100% 100%, 73% 100%, 37% 27%);
-
-                &.active {
-                    background: $color__slate!important;
-                }
-            }
-        }
     }
 
     .freelance-portfolio {
@@ -185,6 +82,10 @@ $graphic-width-large: 40rem;
         .h2 {
             color: $color__gold;
         }
+
+        .portfolio-grid {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+        }
     }
 
     .leibowitz-portfolio {
@@ -197,6 +98,10 @@ $graphic-width-large: 40rem;
 
         .h2 {
             color: $color__light-green;
+        }
+
+        .portfolio-grid {
+            clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
         }
     }
 }
