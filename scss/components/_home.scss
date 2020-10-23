@@ -173,4 +173,13 @@ $graphic-width-large: 40rem;
             }
         }
     }
+
+    .leibowitz-portfolio {
+        min-height: 50vh;
+        padding: 0 4rem;
+
+        .h2 {
+            color: $color__dark-green;
+        }
+    }
 }

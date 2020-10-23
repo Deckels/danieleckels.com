@@ -34,23 +34,27 @@ get_header();
 			</div>
 		</section>
 
+		<?php if(have_rows('leibowitz')):?>
 		<section class="leibowitz-portfolio">
-			<div class="inner-section">
+			<?php while(have_rows('leibowitz')): the_row();?>
+				<div class="inner-section">
+					<h2 class="h2"><?=get_sub_field('title')?></h2>
 
-			</div>
-
-			<div class="portfolio-grid">
-				<?php foreach(get_field('leibowitz_portfolio') as $item):?>
-					<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
-						<div class="portfolio-item">
-							<figure>
-								<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
-							</figure>
-						</div>
-					</a>
-				<?php endforeach;?>
-			</div>
+					<div class="portfolio-grid">
+						<?php foreach(get_sub_field('portfolio') as $item):?>
+							<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
+								<div class="portfolio-item">
+									<figure>
+										<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
+									</figure>
+								</div>
+							</a>
+						<?php endforeach;?>
+					</div>
+				</div>
+			<?php endwhile;?>
 		</section>
+		<?php endif;?>
 	</main>
 
 <?php
