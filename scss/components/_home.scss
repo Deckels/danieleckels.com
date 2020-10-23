@@ -1,0 +1,92 @@
+$graphic-width: 50rem;
+
+.home {
+    .hero {
+        align-content: center;
+        background-color: $color__dark;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        padding: 0 4rem;
+        width: 100vw;
+
+        .inner {
+            position: relative;
+            width: $graphic-width;
+        }
+
+        .segment {
+            background: $color__white;
+            clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0% 100%);
+            height: $graphic-width * 0.625;
+            position: absolute;
+            transition: clip-path .4s;
+            width: $graphic-width * 0.625;
+            
+            &.active {
+                z-index: 1;
+            }
+            
+            &__1, &__2 {
+                left: 0;  
+                
+                &.active {
+                    clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0% 100%);
+                }
+            }
+            
+            &__1 {
+                animation: pop-in .2s ease-in backwards, color-fade .5s ease-in 1.5s forwards;
+                background: $color__dark-green;
+                clip-path: polygon(50% 0, 63% 27%, 27% 100%, 0% 100%);
+            }
+            
+            &__2 {
+                background: lighten($color__dark-green, 15%);
+                animation: pop-in .2s ease-in .2s backwards, color-fade .5s ease-in 1.5s forwards;
+                clip-path: polygon(65% 30%, 78% 57%, 57% 100%, 30% 100%); 
+            }
+            
+            &__3, &__4 {
+                left: 50%;
+                transform: translateX(-50%);
+                
+                &.active {
+                    clip-path: polygon(50% 0, 100% 100%, 50% 100%, 0% 100%);
+                }
+            }
+            
+            &__3 {
+                animation: pop-in .2s ease-in .4s backwards, color-fade .5s ease-in 1.5s forwards;
+                background: lighten($color__light-green, 15%);
+                clip-path: polygon(50% 60%, 70% 100%, 70% 100%, 30% 100%, );
+            }
+            
+            &__4 {
+                animation: pop-in .2s ease-in 1s backwards, color-fade .5s ease-in 1.5s forwards;
+                background: $color__light-green;
+                clip-path: polygon(50% 0, 63% 27%, 50% 54%, 37% 27%);
+            }
+            
+            &__5, &__6 {
+                right: 0;
+                
+                &.active {
+                    clip-path: polygon(50% 0, 100% 100%, 0% 100%, 0% 100%);
+                }
+            }
+            
+            &__5 {
+                animation: pop-in .2s ease-in .6s backwards, color-fade .5s ease-in 1.5s forwards;
+                background: $color__slate;
+                clip-path: polygon(35% 30%, 70% 100%, 43% 100%, 22% 57%);
+            }
+            
+            &__6 {
+                animation: pop-in .2s ease-in .8s backwards, color-fade .5s ease-in 1.5s forwards;
+                background: lighten($color__slate, 15%);
+                clip-path: polygon(50% 0, 100% 100%, 73% 100%, 37% 27%);
+            }
+        }
+    }
+}
