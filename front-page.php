@@ -33,6 +33,28 @@ get_header();
 				</div>
 			</div>
 		</section>
+
+		<?php if(have_rows('leibowitz')):?>
+		<section class="leibowitz-portfolio">
+			<?php while(have_rows('leibowitz')): the_row();?>
+				<div class="inner-section">
+					<h2 class="h2"><?=get_sub_field('title')?></h2>
+
+					<div class="portfolio-grid">
+						<?php foreach(get_sub_field('portfolio') as $item):?>
+							<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
+								<div class="portfolio-item">
+									<figure>
+										<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
+									</figure>
+								</div>
+							</a>
+						<?php endforeach;?>
+					</div>
+				</div>
+			<?php endwhile;?>
+		</section>
+		<?php endif;?>
 	</main>
 
 <?php

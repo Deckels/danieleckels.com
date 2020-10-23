@@ -29,9 +29,6 @@ if ( ! function_exists( 'danieleckels_setup' ) ) :
 		 */
 		load_theme_textdomain( 'danieleckels', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -55,15 +52,13 @@ if ( ! function_exists( 'danieleckels_setup' ) ) :
 		);
 
 		/*
-		 * Switch default core markup for search form, comment form, and comments
+		 * Switch default core markup for search form
 		 * to output valid HTML5.
 		 */
 		add_theme_support(
 			'html5',
 			array(
 				'search-form',
-				'comment-form',
-				'comment-list',
 				'gallery',
 				'caption',
 				'style',
@@ -110,6 +105,29 @@ function wpi_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
     return $stylesheet_dir_uri.'/css/main.css';
 }
 
+// Removes from admin menu
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+// Removes from post and pages
+add_action('init', 'remove_comment_support', 100);
+
+function remove_comment_support() {
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'page', 'comments' );
+}
+// Removes from admin bar
+function mytheme_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+function remove_default_post_type() {
+    remove_menu_page( 'edit.php' );
+}
+add_action( 'admin_menu', 'remove_default_post_type' );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -136,4 +154,51 @@ function danieleckels_scripts() {
 	wp_enqueue_script( 'danieleckels-scripts', get_template_directory_uri() . '/js/dist/scripts.min.js', array(), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'danieleckels_scripts' );
+
+// Portfolio Custom Post Type
+function portfolio_init() {
+    // set up product labels
+    $labels = array(
+        'name' => 'Portfolio',
+        'singular_name' => 'Portfolio Item',
+        'add_new' => 'Add New Portfolio Item',
+        'add_new_item' => 'Add New Portfolio Item',
+        'edit_item' => 'Edit Portfolio Item',
+        'new_item' => 'New Portfolio Item',
+        'all_items' => 'All Portfolio Items',
+        'view_item' => 'View Portfolio Item',
+        'search_items' => 'Search Portfolio',
+        'not_found' =>  'No Portfolio Items Found',
+        'not_found_in_trash' => 'No Portfolio Items found in Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Portfolio Items',
+    );
+    
+    // register post type
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'query_var' => true,
+        'menu_icon' => 'dashicons-editor-code',
+        'show_in_rest' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'custom-fields',
+            'thumbnail',
+            'page-attributes'
+        )
+    );
+
+    register_taxonomy('categories', 'portfolio', array('hierarchical' => true, 'label' => 'Categories', 'query_var' => true, 'show_in_rest' => true));
+    register_post_type( 'portfolio', $args );
+
+}
+
+add_action( 'init', 'portfolio_init' );
 

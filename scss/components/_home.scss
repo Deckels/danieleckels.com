@@ -80,7 +80,7 @@ $graphic-width-large: 40rem;
 
             @include breakpoint(medium) {
                 height: $graphic-width-large * 0.625;
-                width: $graphic-width-large;
+                width: $graphic-width-large * 0.625;
             }
             
             &.active {
@@ -171,6 +171,15 @@ $graphic-width-large: 40rem;
                     background: lighten($color__slate, 15%) !important;
                 }
             }
+        }
+    }
+
+    .leibowitz-portfolio {
+        min-height: 50vh;
+        padding: 0 4rem;
+
+        .h2 {
+            color: $color__dark-green;
         }
     }
 }
