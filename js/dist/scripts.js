@@ -8,10 +8,16 @@ $(function() {
         var selector = index + 1;
 
         $(this).on('mouseenter', function() {
-            $('.segment__' + selector).addClass('active');
+            $('.home.segment__' + selector).addClass('active');
         });
         $(this).on('mouseleave', function() {
-            $('.segment__' + selector).removeClass('active');
+            $('.home.segment__' + selector).removeClass('active');
         })
+    });
+
+    $('.small-graphic').each(function(index) {
+        var selector = index + 1;
+        var segment = $(this).find('.segment__' + selector);
+        segment.addClass('active');
     });
 });
