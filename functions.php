@@ -132,7 +132,8 @@ function danieleckels_scripts() {
 	wp_enqueue_style( 'danieleckels-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'danieleckels-style', 'rtl', 'replace' );
 	
-	wp_enqueue_script( 'danieleckels-scripts', get_template_directory_uri() . '/js/scripts/scripts.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'danieleckels-scripts', get_template_directory_uri() . '/js/dist/scripts.min.js', array(), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'danieleckels_scripts' );
 
