@@ -18,7 +18,7 @@
 }
 
 .inner-section {
-    margin: auto;
+    margin: 0 auto;
     max-width: 120rem;
 }
 
@@ -158,12 +158,4 @@
 
 .small-graphic {
     padding-right: 1rem;
-}
-
-.title-section {
-    @extend .inner-section;
-
-    align-items: flex-end;
-    display: flex;
-    margin: 2rem 0;
 }
