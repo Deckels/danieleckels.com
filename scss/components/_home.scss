@@ -2,6 +2,80 @@ $graphic-width-small: 20rem;
 $graphic-width-large: 40rem;
 
 .home {
+    .about {
+        // height: 100vh;
+        position: relative;
+
+        .content-section {
+            background-color: $color__dark;
+            padding: 6rem 4rem;
+
+            .content {
+                border-bottom: 2px solid $color__blue;
+                // border-top: 2px solid $color__blue;
+                color: $color__white;
+                font-size: ms(4);
+                font-weight: 300;
+                height: 100%;
+                line-height: ms(5);   
+
+                @include breakpoint(medium) {
+                    // padding: 0 10rem;
+                    width: 50%;
+                }
+
+                @include breakpoint(large) {
+                    // padding: 0 10rem;
+                    width: 35%;
+                }
+            }
+
+            .image {
+                margin-bottom: 2rem;
+                text-align: center;
+
+                @include breakpoint(medium) {
+                    margin: 0;
+                }
+            }
+
+            .inner-section {
+                display: flex;
+                flex-direction: column-reverse;
+
+                @include breakpoint(medium) {
+                    align-items: center;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .h2 {
+            color: $color__blue;
+        }
+
+        .title-section {
+            align-items: center;
+            background-color: $color__dark;
+            clip-path: polygon(0 0, 30% 100%, 70% 100%, 100% 0);
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 2rem 0 2rem 0;
+            width: 50vw;
+
+            @include breakpoint(medium) {
+                padding: 3rem 0 3rem 0;
+                width: 45vw;
+            }
+
+            @include breakpoint(large) {
+                padding: 4rem 0 4rem 0;
+                width: 30vw;
+            }
+        }
+    }
     .hero {
         background-color: $color__dark;
         color: $color__white;
@@ -72,7 +146,6 @@ $graphic-width-large: 40rem;
     }
 
     .freelance-portfolio {
-        border-top: .2rem solid $color__gold;
         min-height: 50vh;
 
         .container {
@@ -89,7 +162,6 @@ $graphic-width-large: 40rem;
     }
 
     .leibowitz-portfolio {
-        border-top: .2rem solid $color__light-green;
         min-height: 50vh;
 
         .container {
