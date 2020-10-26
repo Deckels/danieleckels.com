@@ -58,6 +58,34 @@ get_header();
 		</section>
 		<?php endif;?>
 
+		<?php if(have_rows('skills')):?>
+			<section class="skills">
+				<?php while(have_rows('skills')): the_row();?>
+					<div class="title-section">
+						<div class="small-graphic small-graphic__3">
+							<?php get_template_part('partials/graphic-section-small')?>
+						</div>
+						<h2 class="h2"><?=get_sub_field('title')?></h2>
+					</div>
+
+					<div class="skill-grid">
+						<div class="skill">
+							<h3 class="h3"><?= get_sub_field('column_1_title')?></h3>
+							<div class="content">
+								<?= get_sub_field('column_1_content')?>
+							</div>
+						</div>
+						<div class="skill">
+							<h3 class="h3"><?= get_sub_field('column_2_title')?></h3>
+							<div class="content">
+								<?= get_sub_field('column_2_content')?>
+							</div>
+						</div>
+					</div>
+				<?php endwhile;?>
+			</section>
+		<?php endif;?>
+
 		<?php if(have_rows('leibowitz')):?>
 		<section class="leibowitz-portfolio">
 			<?php while(have_rows('leibowitz')): the_row();?>
