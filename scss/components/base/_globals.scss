@@ -4,10 +4,14 @@ html {
 }
 
 body {
-    background-color: $color__dark;
+    background: $color__white;
     font-size: ms(2);
 }
 
 a {
     cursor: pointer;
+}
+
+figure {
+    margin: 0;
 }
