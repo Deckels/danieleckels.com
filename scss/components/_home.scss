@@ -3,16 +3,14 @@ $graphic-width-large: 40rem;
 
 .home {
     .about {
-        // height: 100vh;
         position: relative;
 
         .content-section {
             background-color: $color__dark;
-            padding: 6rem 4rem;
+            padding: 6rem 4rem 15rem 4rem;
 
             .content {
                 border-bottom: 2px solid $color__blue;
-                // border-top: 2px solid $color__blue;
                 color: $color__white;
                 font-size: ms(4);
                 font-weight: 300;
@@ -20,12 +18,10 @@ $graphic-width-large: 40rem;
                 line-height: ms(5);   
 
                 @include breakpoint(medium) {
-                    // padding: 0 10rem;
                     width: 50%;
                 }
 
                 @include breakpoint(large) {
-                    // padding: 0 10rem;
                     width: 35%;
                 }
             }
@@ -56,11 +52,8 @@ $graphic-width-large: 40rem;
         }
 
         .title-section {
-            align-items: center;
             background-color: $color__dark;
             clip-path: polygon(0 0, 30% 100%, 70% 100%, 100% 0);
-            display: flex;
-            flex-direction: column;
             margin: auto;
             padding: 2rem 0 2rem 0;
             width: 50vw;
