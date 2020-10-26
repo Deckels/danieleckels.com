@@ -34,6 +34,30 @@ get_header();
 			</div>
 		</section>
 
+		<?php if(have_rows('about')):?>
+		<section class="about">
+			<?php while(have_rows('about')): the_row();?>
+				<div class="title-section">
+					<div class="small-graphic small-graphic__3">
+						<?php get_template_part('partials/graphic-section-small')?>
+					</div>
+					<h2 class="h2"><?=get_sub_field('title')?></h2>
+				</div>
+
+				<div class="content-section">
+					<div class="inner-section">
+						<div class="content">
+							<?= get_sub_field('content')?>
+						</div>
+						<figure class="image">
+							<?= wp_get_attachment_image(get_sub_field('image'), 'medium')?>
+						</figure>
+					</div>
+				</div>
+			<?php endwhile;?>
+		</section>
+		<?php endif;?>
+
 		<?php if(have_rows('leibowitz')):?>
 		<section class="leibowitz-portfolio">
 			<?php while(have_rows('leibowitz')): the_row();?>
