@@ -18,7 +18,7 @@
 }
 
 .inner-section {
-    margin: auto;
+    margin: 0 auto;
     max-width: 120rem;
 }
 
@@ -161,9 +161,7 @@
 }
 
 .title-section {
-    @extend .inner-section;
-
-    align-items: flex-end;
+    align-items: center;
     display: flex;
-    margin: 2rem 0;
+    flex-direction: column;
 }
