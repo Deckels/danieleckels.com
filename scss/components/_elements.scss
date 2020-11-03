@@ -1,3 +1,27 @@
+.button-container {
+    align-content: center;
+    display: flex;
+    width: 10%;
+
+    @include breakpoint(medium) {
+        width: 5%;
+    }
+
+    .prev, .next {
+        border: none;
+        font-size: ms(3);
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .prev {
+        transform: scaleX(-1);
+    }
+}
+
 .graphic-section-small {
     $width: 5rem; 
 
@@ -23,12 +47,13 @@
 }
 
 .portfolio-grid {
-    background: $color__white;
-    display: grid;
-    grid-auto-rows: 20rem;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    padding: 10rem 0;
-    width: 100%;
+    display: flex;
+    padding: 6rem 0;
+    width: 80%;
+
+    @include breakpoint(medium) {
+        width: 90%;
+    }
 }
 
 .portfolio-item-link {
@@ -39,6 +64,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    height: 100%;
 
     filter: grayscale(100%);
     flex-grow: 1;
@@ -153,6 +179,12 @@
             background: $color__slate!important;
         }
     }
+}
+
+.slider-container {
+    background: $color__white;
+    display: flex;
+    width: 100vw;
 }
 
 .small-graphic {
