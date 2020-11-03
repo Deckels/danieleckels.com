@@ -7,7 +7,7 @@ $graphic-width-large: 40rem;
 
         .content-section {
             background-color: $color__dark;
-            padding: 6rem 4rem 15rem 4rem;
+            padding: 6rem 4rem;
 
             .content {
                 border-bottom: 2px solid $color__blue;
@@ -139,6 +139,7 @@ $graphic-width-large: 40rem;
     }
 
     .freelance-portfolio {
+        background: $color__dark;
         min-height: 50vh;
 
         .container {
@@ -155,6 +156,7 @@ $graphic-width-large: 40rem;
     }
 
     .leibowitz-portfolio {
+        background: $color__dark;
         min-height: 50vh;
 
         .container {
@@ -167,6 +169,80 @@ $graphic-width-large: 40rem;
 
         .portfolio-grid {
             clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+        }
+    }
+
+    .skills {
+        background-color: $color__dark;
+        padding: 6rem 4rem;
+
+        .h2 {
+            color: $color__dark-green;
+        }
+
+        .skill {
+            border: 2px solid $color__dark-green;
+            border-radius: 1rem;
+            color: $color__white;
+            padding: 4rem 8rem;
+
+            .content {
+                margin-left: 2rem;
+            }
+
+            .h3 {
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+
+            ul {
+                display: flex;
+                font-size: ms(3);
+                flex-direction: column;
+                justify-content: space-between;
+                list-style: none;
+                margin: 0 auto;
+                padding: 0;
+
+                @include breakpoint(large) {
+                    flex-direction: row;
+                }
+
+                & > li {
+                    display: flex;
+                    flex-direction: column;
+
+                    & > ul {
+                        display: inline-block;
+                        margin: 2rem 0;
+
+                        & > li {
+                            display: block;
+                            position: relative;
+                            padding-bottom: 1rem;
+
+                            &::before {
+                                color: $color__dark-green;
+                                content: '▲';
+                                display: inline-block;
+                                padding-right: 1rem;
+                            }
+                        }
+
+                    }
+                    
+                }
+            }
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-auto-rows: fit-content;
+            grid-gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            padding: 10rem 0;
+            margin-bottom: 5rem;
+            width: 100%;
         }
     }
 }
