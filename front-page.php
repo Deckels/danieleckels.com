@@ -35,8 +35,8 @@ get_header();
 		</section>
 
 		<?php if(have_rows('about')):?>
-		<section class="about">
 			<?php while(have_rows('about')): the_row();?>
+			<section class="about" style="background-image: linear-gradient(#CCC 0%, #CCC 100%), url('<?= get_sub_field('background_image')?>')">
 				<div class="title-section">
 					<div class="small-graphic small-graphic__3">
 						<?php get_template_part('partials/graphic-section-small')?>
@@ -50,12 +50,12 @@ get_header();
 							<?= get_sub_field('content')?>
 						</div>
 						<figure class="image">
-							<?= wp_get_attachment_image(get_sub_field('image'), 'medium')?>
+							<?= wp_get_attachment_image(get_sub_field('image'))?>
 						</figure>
 					</div>
 				</div>
+			</section>
 			<?php endwhile;?>
-		</section>
 		<?php endif;?>
 
 		<?php if(have_rows('skills')):?>
