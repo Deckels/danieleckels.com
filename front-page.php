@@ -98,16 +98,26 @@ get_header();
 					</div>
 				</div>
 
-				<div class="portfolio-grid">
-					<?php foreach(get_sub_field('portfolio') as $item):?>
-						<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
-							<div class="portfolio-item">
-								<figure>
-									<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
-								</figure>
-							</div>
-						</a>
-					<?php endforeach;?>
+				<div class="slider-container">
+					<div class="button-container">
+						<button class="prev">►</button>
+					</div>
+
+					<div class="portfolio-grid">
+						<?php foreach(get_sub_field('portfolio') as $item):?>
+							<a class="portfolio-item-link" href="<?= get_field('url', $item->ID)?>" target="_blank">
+								<div class="portfolio-item">
+									<figure>
+										<img src="<?= get_the_post_thumbnail_url($item->ID)?>" alt="<?=get_the_title($item->ID)?>">
+									</figure>
+								</div>
+							</a>
+						<?php endforeach;?>
+					</div>
+
+					<div class="button-container">
+						<button class="next">►</button>
+					</div>
 				</div>
 			<?php endwhile;?>
 		</section>
