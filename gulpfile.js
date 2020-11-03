@@ -8,6 +8,7 @@ var autoprefixer  = require('autoprefixer');
 
 var jsFiles = [
   'js/jquery.min.js',
+  'js/slick.min.js',
   'js/app.js'
 ]
 var jsDest = 'js/dist';
