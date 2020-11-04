@@ -46,12 +46,12 @@ get_header();
 
 				<div class="content-section">
 					<div class="inner-section">
-						<div class="content">
-							<?= get_sub_field('content')?>
-						</div>
 						<figure class="image">
 							<?= wp_get_attachment_image(get_sub_field('image'))?>
 						</figure>
+						<div class="content">
+							<?= get_sub_field('content')?>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -152,7 +152,27 @@ get_header();
 			<?php endwhile;?>
 		</section>
 		<?php endif;?>
-	</main>
 
+		<?php if(have_rows('project')):?>
+		<section class="project-inquiries">
+			<?php while(have_rows('project')): the_row();?>
+				<div class="container">
+					<div class="title-section">
+						<div class="small-graphic small-graphic__4">
+							<?php get_template_part('partials/graphic-section-small')?>
+						</div>
+						<h2 class="h2 title"><?=get_sub_field('title')?></h2>
+					</div>
+
+					<div class="content">
+						<h3 class="h2 headline"><?= get_sub_field('headline')?></h3>
+						<?= get_sub_field('content')?>
+						<a class="button" href="mailto:<?= get_sub_field('link')?>"><?= get_sub_field('link_text')?></a>
+					</div>
+				</div>
+			<?php endwhile;?>
+		</section>
+		<?php endif;?>
+	</main>
 <?php
 get_footer();
