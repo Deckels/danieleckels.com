@@ -1,6 +1,18 @@
 @import '../../../node_modules/modularscale-sass/stylesheets/modularscale';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../inc/fonts/icomoon.eot?rg7ha0');
+  src:  url('../../inc/fonts/icomoon.eot?rg7ha0#iefix') format('embedded-opentype'),
+    url('../inc/fonts/icomoon.ttf?rg7ha0') format('truetype'),
+    url('../inc/fonts/icomoon.woff?rg7ha0') format('woff'),
+    url('../inc/fonts/icomoon.svg?rg7ha0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 $font__main: 'Roboto', sans-serif;
 $font__heading: 'Raleway', sans-serif;
 

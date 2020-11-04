@@ -1,0 +1,14 @@
+.site-footer {
+    .h2 {
+        color: $color__slate;
+    }
+
+    .social-links {
+        display: flex;
+        padding: 6rem 0;
+    
+        .icon {
+            margin: 0 1rem;
+        }
+    }
+}
