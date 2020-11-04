@@ -1,32 +1,24 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Leibowitz
- */
+	<footer class="site-footer">
+		<div class="container">
+			<div class="title-section">
+				<div class="small-graphic small-graphic__4">
+					<?php get_template_part('partials/graphic-section-small')?>
+				</div>
+				<h2 class="h2"><?=get_field('footer_title', 'options')?></h2>
 
-?>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'leibowitz' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'leibowitz' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'leibowitz' ), 'leibowitz', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+				<?php if(have_rows('social_links', 'options')):?>
+					<div class="social-links">
+						<?php while(have_rows('social_links', 'options')): the_row();?>
+							<a class="icon" href="<?= get_sub_field('link')?>" target="_blank">
+								<span class="icon-<?= get_sub_field('title')?>"></span>
+							</a>
+						<?php endwhile;?>
+					</div>
+				<?php endif;?>
+			</div>
+		</div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 
