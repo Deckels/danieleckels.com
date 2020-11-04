@@ -53,6 +53,39 @@
     }
 }
 
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-twitter:before {
+    content: "\ea96";
+}
+.icon-twitch:before {
+    content: "\ea9f";
+}
+.icon-github:before {
+    content: "\eab0";
+}
+.icon-linkedin:before {
+    content: "\eaca";
+}
+
+.icon {
+    color: $color__light-green;
+    font-size: ms(6);
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: lighten($color__light-green, 20%);
+    }
+}
+
 .inner-section {
     margin: 0 auto;
     max-width: 120rem;
