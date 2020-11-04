@@ -46,12 +46,12 @@ get_header();
 
 				<div class="content-section">
 					<div class="inner-section">
-						<div class="content">
-							<?= get_sub_field('content')?>
-						</div>
 						<figure class="image">
 							<?= wp_get_attachment_image(get_sub_field('image'))?>
 						</figure>
+						<div class="content">
+							<?= get_sub_field('content')?>
+						</div>
 					</div>
 				</div>
 			</section>

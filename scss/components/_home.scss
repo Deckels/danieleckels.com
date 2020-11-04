@@ -49,7 +49,7 @@ $graphic-width-large: 40rem;
 
             .inner-section {
                 display: flex;
-                flex-direction: column-reverse;
+                flex-direction: column;
                 max-width: 100rem;
 
                 @include breakpoint(medium) {
