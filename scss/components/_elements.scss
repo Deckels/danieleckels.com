@@ -22,6 +22,18 @@
     }
 }
 
+.button {
+    background: $color__light-green;
+    border-radius: 1rem;
+    color: $color__dark;
+    padding: 1rem 2rem;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        background-color: lighten($color__light-green, 20%);
+    }
+}
+
 .graphic-section-small {
     $width: 5rem; 
 
@@ -162,11 +174,11 @@
     
     &__5 {
         animation: pop-in .2s ease-in .6s backwards, color-fade .5s ease-in 1.5s forwards;
-        background: lighten($color__slate, 20%);
+        background: $color__light-grey;
         clip-path: polygon(35% 30%, 70% 100%, 43% 100%, 22% 57%);
 
         &.active {
-            background: lighten($color__slate, 20%) !important;
+            background: $color__light-grey !important;
         }
     }
     
