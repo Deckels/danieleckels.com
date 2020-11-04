@@ -23,7 +23,7 @@ get_header();
 						<div class="hero-link-list">
 							<?php $index = 1;?>
 							<?php while(have_rows('hero_links')): the_row();?>
-								<a class="h4 hero-link hero-link__<?=$index?>">
+								<a href="<?= get_sub_field('link')?>" class="h4 hero-link hero-link__<?=$index?>">
 									<?= get_sub_field('title')?>
 								</a>
 								<?php $index += 1;?>
@@ -34,6 +34,7 @@ get_header();
 			</div>
 		</section>
 
+		<a id="about"></a>
 		<?php if(have_rows('about')):?>
 			<?php while(have_rows('about')): the_row();?>
 			<section class="about" style="background-image: linear-gradient(#CCC 0%, #CCC 100%), url('<?= get_sub_field('background_image')?>')">
@@ -58,6 +59,7 @@ get_header();
 			<?php endwhile;?>
 		<?php endif;?>
 
+		<a id="skills"></a>
 		<?php if(have_rows('skills')):?>
 			<section class="skills">
 				<?php while(have_rows('skills')): the_row();?>
@@ -86,6 +88,7 @@ get_header();
 			</section>
 		<?php endif;?>
 
+		<a id="work"></a>
 		<?php if(have_rows('leibowitz')):?>
 		<section class="leibowitz-portfolio">
 			<?php while(have_rows('leibowitz')): the_row();?>
@@ -123,6 +126,7 @@ get_header();
 		</section>
 		<?php endif;?>
 
+		<a id="portfolio"></a>
 		<?php if(have_rows('freelance')):?>
 		<section class="freelance-portfolio">
 			<?php while(have_rows('freelance')): the_row();?>
@@ -153,6 +157,7 @@ get_header();
 		</section>
 		<?php endif;?>
 
+		<a id="project"></a>
 		<?php if(have_rows('project')):?>
 		<section class="project-inquiries">
 			<?php while(have_rows('project')): the_row();?>

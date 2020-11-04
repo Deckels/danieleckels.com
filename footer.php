@@ -1,4 +1,4 @@
-	<footer class="site-footer">
+	<footer class="site-footer" id="footer">
 		<div class="container">
 			<div class="title-section">
 				<div class="small-graphic small-graphic__4">

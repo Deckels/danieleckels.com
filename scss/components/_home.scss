@@ -98,6 +98,8 @@ $graphic-width-large: 40rem;
 
         .hero-link {
             position: relative;
+            text-decoration: none;
+
             &:not(:last-of-type()) {
                 padding-right: 1rem;
             }
