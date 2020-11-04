@@ -202,3 +202,8 @@ function portfolio_init() {
 
 add_action( 'init', 'portfolio_init' );
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
