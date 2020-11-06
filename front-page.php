@@ -168,7 +168,9 @@ get_header();
 						</div>
 						<h2 class="h2 title"><?=get_sub_field('title')?></h2>
 					</div>
+				</div>
 
+				<div class="content-container">
 					<div class="content">
 						<h3 class="h2 headline"><?= get_sub_field('headline')?></h3>
 						<?= get_sub_field('content')?>

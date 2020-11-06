@@ -211,13 +211,20 @@ $graphic-width-large: 40rem;
 }
 
 .project-inquiries {
-    padding-top: 4rem;
+    padding: 4rem 0;
 
     .container {
-        border-bottom: .5rem solid $color__light-grey;
-        margin-bottom: 30rem;
-        padding-bottom: 20rem;
-        position: relative;
+        padding: 0 4rem 4rem 4rem;
+    }
+
+    .content-container {
+        padding: 0 4rem;
+        @include breakpoint(medium) {
+            border-bottom: .5rem solid $color__light-grey;
+            margin-bottom: 30rem;
+            padding-bottom: 20rem;
+            position: relative;
+        }
     }
 
     .content {
@@ -226,13 +233,17 @@ $graphic-width-large: 40rem;
         border-radius: 2rem;
         color: $color__dark;
         font-size: ms(3);
-        left: 50%;
         line-height: ms(6);
         padding: 4rem;
-        position: absolute;
-        text-align: right;
-        transform: translate(-50%, -40%);
-        top: 100%;
+        text-align: center;
+
+        @include breakpoint(medium) {
+            left: 50%;
+            position: absolute;
+            text-align: center;
+            top: 100%;
+            transform: translate(-50%, -40%);
+        }
 
         .headline {
             text-align: center;
