@@ -1,12 +1,21 @@
 $(function() {
     $('.hero-link').each(function(index) {
         var selector = index + 1;
+        var href = $(this).attr('href');
 
         $(this).on('mouseenter', function() {
-            $('.home.segment__' + selector).addClass('active');
+          $('.home.segment__' + selector).addClass('active');
         });
+
         $(this).on('mouseleave', function() {
-            $('.home.segment__' + selector).removeClass('active');
+          $('.home.segment__' + selector).removeClass('active');
+        })
+
+        $(this).on('click', function(event) {
+          event.preventDefault();
+          $(href)[0].scrollIntoView({
+            behavior: "smooth"
+          });
         })
     });
 

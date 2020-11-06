@@ -156,7 +156,7 @@ $graphic-width-large: 40rem;
     // min-height: 50vh;
 
     .container {
-        padding: 0 4rem 8rem 4rem;
+        padding: 4rem 4rem 8rem 4rem;
     }
 
     .h2 {
@@ -171,6 +171,7 @@ $graphic-width-large: 40rem;
 .leibowitz-portfolio {
     background: $color__dark;
     min-height: 50vh;
+    padding-top: 4rem;
 
     .container {
         padding: 0 4rem 4rem 4rem;
@@ -187,6 +188,8 @@ $graphic-width-large: 40rem;
 }
 
 .project-inquiries {
+    padding-top: 4rem;
+
     .container {
         border-bottom: .5rem solid $color__light-grey;
         margin-bottom: 30rem;
@@ -225,7 +228,7 @@ $graphic-width-large: 40rem;
 
 .skills {
     background-color: $color__dark;
-    padding: 6rem 4rem;
+    padding: 6rem 4rem 0 4rem;
 
     .h2 {
         color: $color__dark-green;
