@@ -68,7 +68,7 @@ $graphic-width-large: 40rem;
         clip-path: polygon(0 0, 50% 100%, 100% 0);
         margin: auto;
         padding: 2rem 0 6rem 0;
-        width: 60vw;
+        width: 75vw;
 
         @include breakpoint(medium) {
             padding: 2rem 0 6rem 0;
@@ -90,18 +90,39 @@ $graphic-width-large: 40rem;
     .content-area {
         .content {
             margin-bottom: 3rem;
+            text-align: center;
+
+            @include breakpoint(large) {
+                text-align: left;
+            }
         }
 
         h1 {
             @extend .h1;
         }
 
+        .hero-link-list {
+            display: flex;
+            flex-direction: column;
+
+            @include breakpoint(medium) {
+                flex-direction: row;
+            }
+        }
+
         .hero-link {
+            font-size: ms(3);
             position: relative;
+            text-align: center;
             text-decoration: none;
 
             &:not(:last-of-type()) {
-                padding-right: 1rem;
+                margin-bottom: 1.5rem;
+
+                @include breakpoint(medium) {
+                    margin: 0;
+                    padding-right: 1rem;
+                }
             }
 
             &__1 {
@@ -128,11 +149,13 @@ $graphic-width-large: 40rem;
     .graphic-section {
         display: inline-block;
         height: $graphic-width-small * 0.625;
+        margin-bottom: 2rem;
         position: relative;
         width: $graphic-width-small;
 
         @include breakpoint(medium) {
             height: $graphic-width-large * 0.625;
+            margin: 0;
             width: $graphic-width-large;
         }
     }
@@ -144,7 +167,7 @@ $graphic-width-large: 40rem;
         height: 100%;
         justify-content: center;
 
-        @include breakpoint(xlarge) {
+        @include breakpoint(large) {
             flex-direction: row;
             justify-content: space-between;
         }
@@ -238,7 +261,11 @@ $graphic-width-large: 40rem;
         border: 2px solid $color__dark-green;
         border-radius: 1rem;
         color: $color__white;
-        padding: 4rem 8rem;
+        padding: 4rem 2rem;
+
+        @include breakpoint(large) {
+            padding: 4rem 8rem;
+        }
 
         .content {
             margin-left: 2rem;
@@ -294,8 +321,11 @@ $graphic-width-large: 40rem;
         grid-auto-rows: fit-content;
         grid-gap: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        padding: 10rem 0;
-        margin-bottom: 5rem;
+        padding: 5rem 0;
         width: 100%;
+
+        @include breakpoint(large) {
+            padding: 10rem 0;
+        }
     }
 }
