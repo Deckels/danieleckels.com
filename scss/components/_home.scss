@@ -105,21 +105,25 @@ $graphic-width-large: 40rem;
             display: flex;
             flex-direction: column;
 
-            @include breakpoint(medium) {
+            @include breakpoint(large) {
                 flex-direction: row;
             }
         }
 
         .hero-link {
-            font-size: ms(3);
+            font-size: ms(4);
             position: relative;
             text-align: center;
             text-decoration: none;
 
+            @include breakpoint(large) {
+                font-size: ms(3);
+            }
+
             &:not(:last-of-type()) {
                 margin-bottom: 1.5rem;
 
-                @include breakpoint(medium) {
+                @include breakpoint(large) {
                     margin: 0;
                     padding-right: 1rem;
                 }
